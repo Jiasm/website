@@ -1,0 +1,33 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "my website",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV='local' nodemon index.js",
+    "deploy": "shipit production deploy",
+    "rollback": "shipit production rollback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiasm/website.git"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "website",
+    "blog"
+  ],
+  "author": "jarvis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jiasm/website/issues"
+  },
+  "homepage": "https://github.com/Jiasm/website#readme",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-body-parser": "^1.1.2",
+    "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2"
+  }
+}

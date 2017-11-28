@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "script": "/root/website/current/server.js",
+  "error_file": "/root/pm2_log/error.log",
+  "out_file": "/root/pm2_log/out.log",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "instances": 0,
+  "merge_logs": true,
+  "exec_mode": "cluster",
+  "ignore_watch": ["node_modules"],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
