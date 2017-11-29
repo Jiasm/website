@@ -5,8 +5,8 @@ const app = new Koa();
 const router = new Router();
 
 router.get('/', async function (ctx, next) {
-  console.log(ctx);
-  console.log('hello');
+  // console.log(ctx);
+  // console.log('hello');
   ctx.body = `
   <!DOCTYPE html>
   <html>
