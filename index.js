@@ -69,12 +69,19 @@ router.get('/', async function (ctx, next) {
   // ctx.router available
 });
 
+// old link redirect handler
+app.use(async function (ctx) {
+  if (/^\/\d{4}\/\d{2}\/\d{2}\/.+/.test(ctx.url)) {
+    ctx.redirect(`http://blog.jiasm.org${ctx.url}`)
+  }
+})
+
 app
   .use(router.routes())
-  .use(router.allowedMethods());
+  .use(router.allowedMethods())
 
 app.listen(8000, () => {
-  console.log('app run on http://127.0.0.1:8000');
+  console.log('app run on http://127.0.0.1:8000')
 })
 
 function sha1 (str) {
