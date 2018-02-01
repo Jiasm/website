@@ -7,6 +7,7 @@ const router = new Router()
 const token = 'jarvisTokenTest'
 
 router.get('/', async function (ctx, next) {
+  console.log('join');
   // 添加wx的token验证
   let {signature, timestamp, nonce, echostr} = ctx.query
   if (signature) {
