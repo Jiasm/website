@@ -7,7 +7,6 @@ const router = new Router()
 const token = 'jarvisTokenTest'
 
 router.get('/', async function (ctx, next) {
-  console.log('join');
   // 添加wx的token验证
   let {signature, timestamp, nonce, echostr} = ctx.query
   if (signature) {
@@ -71,10 +70,12 @@ router.get('/', async function (ctx, next) {
 });
 
 // old link redirect handler
-app.use(async function (ctx) {
+app.use(async function (ctx, next) {
   if (/^\/\d{4}\/\d{2}\/\d{2}\/.+/.test(ctx.url)) {
     ctx.redirect(`http://blog.jiasm.org${ctx.url}`)
   }
+
+  return next()
 })
 
 app
