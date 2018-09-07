@@ -6,7 +6,7 @@ const app = new Koa()
 const router = new Router()
 const token = 'jarvisTokenTest'
 
-router.get('/', async function(ctx, next) {
+router.get('/', async function (ctx, next) {
   // 添加wx的token验证
   let { signature, timestamp, nonce, echostr } = ctx.query
   if (signature) {
@@ -77,9 +77,9 @@ router.get('/', async function(ctx, next) {
 })
 
 // old link redirect handler
-app.use(async function(ctx, next) {
+app.use(async function (ctx, next) {
   if (/^\/\d{4}\/\d{2}\/\d{2}\/.+/.test(ctx.url)) {
-    ctx.redirect(`http://blog.jiasm.org${ctx.url}`)
+    ctx.redirect(`https://blog.jiasm.org${ctx.url}`)
   }
 
   return next()
@@ -91,7 +91,7 @@ app.listen(8000, () => {
   console.log('app run on http://127.0.0.1:8000')
 })
 
-function sha1(str) {
+function sha1 (str) {
   var md5sum = crypto.createHash('sha1')
   md5sum.update(str)
   str = md5sum.digest('hex')
